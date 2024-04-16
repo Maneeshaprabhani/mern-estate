@@ -143,15 +143,15 @@ export default function CreateListing() {
     e.preventDefault();
     try {
       if (formData.imageUrls.length < 1)
-        return setError("You must upload at least one image");
+        return setError('You must upload at least one image');
       if (+formData.regularPrice < +formData.discountPrice)
-        return setError("Discount price must be lower than regular price");
+        return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
-      const res = await fetch("/api/listing/update/${params.listingId}", {
-        method: "POST",
+      const res = await fetch(`/api/listing/update/${params.listingId}`, {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
