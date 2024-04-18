@@ -6,6 +6,7 @@ import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/bundle';
+
 export default function Listing() {
    SwiperCore.use([Navigation]);
     const [listing, setListing] = useState(null);
@@ -57,6 +58,7 @@ return (
               </SwiperSlide>
             ))}
           </Swiper>
+          
  </div>
  )}
   </main>
